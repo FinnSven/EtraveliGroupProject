@@ -1,0 +1,55 @@
+package com.etraveligroup.refactoring.movieRental.service;
+
+import com.etraveligroup.refactoring.movieRental.model.Customer;
+import com.etraveligroup.refactoring.movieRental.model.MovieRental;
+
+
+// Contains business logic, (make abstract or as an interface for unit testing?)
+public class RentalService {
+
+    public RentalInfo calculateRental(MovieRental rental) {
+        double amount = 0;
+        int points = 1;
+
+        switch (rental.getMovie().getType()){
+            case REGULAR:
+                amount = 2;
+                if (rental.getDaysRented() > 2)
+                    amount += (rental.getDaysRented() - 2) * 1.5;
+                break;
+            case NEW_RELEASE:
+                amount = rental.getDaysRented() * 3;
+                if (rental.getDaysRented() >1) points++;
+                break;
+            case CULT:
+                amount = rental.getDaysRented() *3;
+                if (rental.getDaysRented() > 1 ) points++;
+                break;
+            case CHILDRENS:
+                amount = 1.5;
+                if (rental.getDaysRented() > 3)
+                    amount += (rental.getDaysRented() - 3) *1.5;
+                break;
+        }
+        return new RentalInfo(amount, points);
+    }
+
+    public String generateStatement(Customer customer) {
+        StringBuilder result = new StringBuilder("Rental Record for " + customer.getName() + "\n");
+        double totalAmount = 0;
+        int totalPoints = 0;
+
+        for (MovieRental rental : customer.getRentals()) {
+            RentalInfo info = calculateRental(rental);
+            totalAmount += info.getAmount();
+            totalPoints += info.getFrequentRenterPoints();
+
+            result.append("\t").append(rental.getMovie().getTitle())
+                    .append("\t").append(info.getAmount()).append("\n");
+        }
+
+        result.append("Amount owed is ").append(totalAmount).append("\n");
+        result.append("You earned ").append(totalPoints).append(" return rental points");
+        return result.toString();
+    }
+}
