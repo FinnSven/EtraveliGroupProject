@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d15ed9ba-b4a4-4030-83e6-2000ae64130e" name="Changes" comment="Creation">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/etraveligroup/refactoring/movieRental/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/etraveligroup/refactoring/movieRental/model/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/etraveligroup/refactoring/movieRental/model/Movie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/etraveligroup/refactoring/movieRental/model/MovieRental.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/etraveligroup/refactoring/movieRental/service/RentalInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/etraveligroup/refactoring/movieRental/service/RentalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="d15ed9ba-b4a4-4030-83e6-2000ae64130e" name="Changes" comment="Creation, first commit with refactoring to resolve certain issues with code">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/etraveligroup/refactoring/movieRental/model/CultMoviePricingStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/etraveligroup/refactoring/movieRental/model/NewReleasePricingStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/etraveligroup/refactoring/movieRental/model/PricingStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/etraveligroup/refactoring/movieRental/model/RegularPricingStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/etraveligroup/refactoring/movieRental/model/Searchable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/etraveligroup/refactoring/movieRental/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/etraveligroup/refactoring/movieRental/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/etraveligroup/refactoring/movieRental/model/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/etraveligroup/refactoring/movieRental/model/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/etraveligroup/refactoring/movieRental/model/MovieRental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/etraveligroup/refactoring/movieRental/model/MovieRental.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/etraveligroup/refactoring/movieRental/service/RentalInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/etraveligroup/refactoring/movieRental/model/RentalInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/etraveligroup/refactoring/movieRental/service/RentalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/etraveligroup/refactoring/movieRental/service/RentalService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,12 +24,21 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="first" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -47,9 +58,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "CultMovieLogic",
     "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
   }
 }]]></component>
@@ -159,15 +172,81 @@
       <option name="project" value="LOCAL" />
       <updated>1747750831925</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Creation, first commit with refactoring to resolve certain issues with code">
+      <option name="closed" value="true" />
+      <created>1747777946179</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747777946179</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Creation, first commit with refactoring to resolve certain issues with code">
+      <option name="closed" value="true" />
+      <created>1747778662732</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747778662732</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="user">
+                    <value>
+                      <list>
+                        <option value="*" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -175,6 +254,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creation" />
+    <MESSAGE value="Creation, first commit with refactoring to resolve certain issues with code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creation, first commit with refactoring to resolve certain issues with code" />
   </component>
 </project>

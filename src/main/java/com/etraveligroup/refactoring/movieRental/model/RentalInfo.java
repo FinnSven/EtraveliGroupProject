@@ -1,4 +1,4 @@
-package com.etraveligroup.refactoring.movieRental.service;
+package com.etraveligroup.refactoring.movieRental.model;
 
 public class RentalInfo {
     private final double amount;

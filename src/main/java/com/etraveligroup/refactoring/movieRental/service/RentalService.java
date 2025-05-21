@@ -2,35 +2,15 @@ package com.etraveligroup.refactoring.movieRental.service;
 
 import com.etraveligroup.refactoring.movieRental.model.Customer;
 import com.etraveligroup.refactoring.movieRental.model.MovieRental;
+import com.etraveligroup.refactoring.movieRental.model.RentalInfo;
 
 
 // Contains business logic, (make abstract or as an interface for unit testing?)
 public class RentalService {
 
     public RentalInfo calculateRental(MovieRental rental) {
-        double amount = 0;
-        int points = 1;
-
-        switch (rental.getMovie().getType()){
-            case REGULAR:
-                amount = 2;
-                if (rental.getDaysRented() > 2)
-                    amount += (rental.getDaysRented() - 2) * 1.5;
-                break;
-            case NEW_RELEASE:
-                amount = rental.getDaysRented() * 3;
-                if (rental.getDaysRented() >1) points++;
-                break;
-            case CULT:
-                amount = rental.getDaysRented() *3;
-                if (rental.getDaysRented() > 1 ) points++;
-                break;
-            case CHILDRENS:
-                amount = 1.5;
-                if (rental.getDaysRented() > 3)
-                    amount += (rental.getDaysRented() - 3) *1.5;
-                break;
-        }
+        double amount = rental.getPrice();
+        int points = rental.getPoints();
         return new RentalInfo(amount, points);
     }
 

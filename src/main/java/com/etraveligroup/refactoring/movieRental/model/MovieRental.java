@@ -11,11 +11,13 @@ public class MovieRental {
         this.daysRented = daysRented;
     }
 
-    public Movie getMovie() {
-        return movie;
+    public double getPrice() {
+        return movie.calculatePrice(daysRented);
+    }
+    public int getPoints() {
+        return movie.calculatePoints(daysRented);
     }
 
-    public int getDaysRented() {
-        return daysRented;
-    }
+    public Movie getMovie() { return movie; }
+    public int getDaysRented() { return daysRented; }
 }
